@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- SEO Meta Tags -->
+    <title>Now Report 신청 | 큐플컴퍼니</title>
+    <meta name="description" content="큐플컴퍼니는 숙박 운영 구조를 진단하고, 상품·가격·판매채널·전환 흐름·현장 운영·체류 경험을 함께 봅니다. 먼저 현재 상태를 확인하고 필요한 범위만 제안드립니다.">
+    <meta property="og:title" content="Now Report 신청 | 큐플컴퍼니">
+    <meta property="og:description" content="큐플컴퍼니는 숙박 운영 구조를 진단하고, 상품·가격·판매채널·전환 흐름·현장 운영·체류 경험을 함께 봅니다. 먼저 현재 상태를 확인하고 필요한 범위만 제안드립니다.">
+    <meta property="og:url" content="https://www.curatep.com/now-report.html">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#02060e",
+                        "secondary": "#0059b9",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#45474b",
+                        "outline-variant": "#c5c6cb",
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Hanken Grotesk', 'Pretendard', sans-serif; background-color: #f8f9fa; word-break: keep-all; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+        .narrow-container { max-width: 720px; margin: 0 auto; width: 100%; }
+        .checklist-item input[type="checkbox"]:checked + label .check-icon { opacity: 1 !important; transform: scale(1) !important; }
+        .checklist-item input[type="checkbox"]:checked + label { background-color: #f0f8ff; border-color: #0059b9; }
+        .check-icon { font-variation-settings: 'wght' 900 !important; font-size: 16px !important; }
+        .subtle-border { border-color: rgba(0, 0, 0, 0.08); }
+        
+        .report-card {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease;
+        }
+        .report-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .report-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .report-card {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased pb-[80px] md:pb-0">
+
+<!-- Header -->
+<header class="fixed top-0 w-full h-[80px] z-50 bg-white border-b subtle-border transition-all duration-300">
+    <div class="max-w-[720px] mx-auto px-5 h-full flex justify-between items-center">
+        <a class="font-display-lg text-[24px] font-extrabold tracking-tight text-primary flex items-center gap-[clamp(4px,1.5vw,12px)] shrink-0 min-w-0" href="index.html">
+            <img src="logo.png" alt="큐플컴퍼니 로고" class="h-[clamp(36px,8vw,56px)] w-auto object-contain mix-blend-multiply shrink-0">
+            <span class="font-display-lg text-[clamp(18px,4.5vw,26px)] font-extrabold tracking-tight text-primary whitespace-nowrap">큐플컴퍼니</span>
+            <span class="font-semibold text-[clamp(14px,3vw,18px)] opacity-80 whitespace-nowrap">Now Report</span>
+        </a>
+        <div class="flex space-x-4 items-center">
+            <a class="hidden sm:block font-title-lg text-[15px] font-semibold text-on-surface-variant hover:text-secondary transition-colors" href="https://open.kakao.com/o/sC7OW8ii" target="_blank" rel="noopener noreferrer">실시간 상담</a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="pt-[100px] pb-20">
+
+    <!-- Hero Section -->
+    <section class="px-5 mb-16">
+        <div class="narrow-container">
+            <div class="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant rounded-full px-4 py-1.5 mb-6">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                <span class="font-label-sm text-[13px] text-on-surface-variant font-bold">Now Report | 숙소 운영 구조 진단 리포트</span>
+            </div>
+            <h1 class="font-display-lg text-[32px] md:text-[40px] text-on-surface mb-6 leading-tight">예약이 줄었다면,<br/>큐플컴퍼니는 광고보다 먼저<br/>운영 구조를 확인합니다.</h1>
+            <div class="bg-white border border-outline-variant/50 p-6 rounded-2xl mb-6 shadow-sm">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-secondary mr-3 mt-0.5 text-xl">help</span>
+                        <p class="font-title-lg text-[16px] text-on-surface">예약 문의는 오는데 전환이 약한가요?</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-secondary mr-3 mt-0.5 text-xl">help</span>
+                        <p class="font-title-lg text-[16px] text-on-surface">가격을 낮춰도 예약이 늘지 않나요?</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-secondary mr-3 mt-0.5 text-xl">help</span>
+                        <p class="font-title-lg text-[16px] text-on-surface">네이버, OTA, 홈페이지, 상담 흐름이 따로 움직이고 있나요?</p>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-on-surface-variant mb-8 text-[15px] md:text-[16px] leading-relaxed">
+                Now Report는 온라인 자료와 현재 운영 상태를 함께 보고,<br/>예약 흐름이 어디서 끊기는지,<br/>무엇을 먼저 정리하고 실행해야 하는지 확인하는<br/><strong class="text-primary font-bold">유료 1회 구조 진단 리포트</strong>입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 mb-4 max-w-[500px] mx-auto">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScLeDhZFVFTsQiltYSRuy1udaewyDBrjF_jdMJqur3E4PBIkA/viewform" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white py-3.5 rounded-full hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/30 flex-1 flex justify-center">
+                    <div class="flex items-center gap-2.5">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                        <span class="font-title-lg text-[16px] font-bold text-left w-[145px] tracking-tight">Now Report 신청하기</span>
+                    </div>
+                </a>
+                <a href="https://open.kakao.com/o/sC7OW8ii" target="_blank" rel="noopener noreferrer" class="bg-[#FEE500] text-[#191600] py-3.5 rounded-full hover:bg-[#FEE500]/90 transition-all shadow-lg shadow-yellow-400/30 flex-1 flex justify-center">
+                    <div class="flex items-center gap-2.5">
+                        <span class="material-symbols-outlined text-[20px]">chat</span>
+                        <span class="font-title-lg text-[16px] font-bold text-left w-[145px] tracking-tight">실시간 상담하기</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section class="px-5 py-12 bg-white border-y border-outline-variant/30 mb-16">
+        <div class="narrow-container">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-secondary text-3xl hidden sm:block">fact_check</span>
+                <h2 class="font-display-lg text-[24px] md:text-[28px] text-on-surface leading-snug">이 중 3개 이상 해당된다면 구조 점검이 필요합니다.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-2.5 mb-8" id="hook-checklist">
+                <!-- 8 Items -->
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-1" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-1">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">예약 문의는 오는데 실제 예약 전환이 약하다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-2" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-2">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">평일 공실이 반복된다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-3" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-3">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">가격을 낮춰도 예약이 크게 늘지 않는다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-4" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-4">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">네이버, OTA, 홈페이지, 상담 흐름이 따로 움직인다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-5" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-5">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">상세페이지는 있지만 선택 이유가 선명하지 않다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-6" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-6">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">고객이 같은 질문을 반복해서 한다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-7" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-7">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">리뷰는 있지만 재방문이나 추천 흐름이 약하다.</span>
+                    </label>
+                </div>
+                <div class="checklist-item relative">
+                    <input class="peer sr-only" id="hc-8" type="checkbox"/>
+                    <label class="flex items-center py-5 px-6 md:py-4 md:px-8 border border-outline-variant/40 rounded-xl cursor-pointer transition-colors hover:bg-surface-container-low shadow-sm" for="hc-8">
+                        <div class="w-6 h-6 border-2 border-slate-400 bg-white rounded-md mr-4 md:mr-5 flex items-center justify-center peer-checked:border-secondary shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-on-surface check-icon opacity-0 scale-50 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <span class="text-on-surface font-medium text-[15px] md:text-[16px]">현장 응대 기준이 사람마다 다르게 운영된다.</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sticky Result Status -->
+            <div class="bg-surface border-2 border-outline-variant/30 p-5 rounded-2xl shadow-sm text-center transition-all duration-300" id="hook-result-box">
+                <p class="font-title-lg text-[16px] text-on-surface-variant mb-1" id="hook-count-text">선택한 항목: 0개</p>
+                <p class="text-[14px] font-bold text-primary mt-2 hidden" id="hook-warning-text">현재 숙소의 운영 구조를 한번 점검해보는 것이 좋습니다.</p>
+            </div>
+            <p class="text-center text-[13px] text-on-surface-variant/80 mt-4 leading-relaxed">
+                정확한 진단은 유료 Now Report에서<br/>
+                온라인 자료와 현재 운영 상태를 함께 보고 정리합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Now Report로 받는 것 -->
+    <section id="report-deliverables" class="px-5 py-12 bg-white border-y border-outline-variant/30 mb-16">
+        <div class="narrow-container">
+            <h2 class="font-display-lg text-[24px] md:text-[28px] mb-4 text-on-surface text-center">Now Report로 무엇을 받나요?</h2>
+            <p class="text-center text-on-surface-variant mb-10 text-[15px] leading-relaxed">
+                Now Report는 단순 상담이 아닙니다.<br/><br/>
+                현재 숙소의 상태를 정리하고,<br/>
+                무엇을 먼저 바꿔야 하는지 우선순위를 안내하는<br/>
+                <strong class="text-primary font-bold">유료 1회 구조 진단 리포트</strong>입니다.
+            </p>
+            
+            <div class="space-y-4">
+                <div class="report-card border border-outline-variant/30 py-5 px-6 md:py-6 md:px-8 rounded-xl bg-white relative z-10">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white font-bold text-[12px] shrink-0">1</div>
+                        <h3 class="font-bold text-[16px] text-primary">한 줄 진단</h3>
+                    </div>
+                    <p class="text-on-surface-variant text-[14px] mt-2">현재 숙소의 핵심 문제가 무엇인지 한 문장으로 정리합니다.</p>
+                </div>
+                <div class="report-card border border-outline-variant/30 py-5 px-6 md:py-6 md:px-8 rounded-xl bg-white relative z-10">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white font-bold text-[12px] shrink-0">2</div>
+                        <h3 class="font-bold text-[16px] text-primary">현재 가장 큰 문제</h3>
+                    </div>
+                    <p class="text-on-surface-variant text-[14px] mt-2">예약 흐름에서 가장 먼저 막히는 지점을 정리합니다.</p>
+                </div>
+                <div class="report-card border border-outline-variant/30 py-5 px-6 md:py-6 md:px-8 rounded-xl bg-white relative z-10">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white font-bold text-[12px] shrink-0">3</div>
+                        <h3 class="font-bold text-[16px] text-primary">현재 가장 큰 강점</h3>
+                    </div>
+                    <p class="text-on-surface-variant text-[14px] mt-2">이미 가지고 있지만 충분히 활용되지 못한 강점을 정리합니다.</p>
+                </div>
+                <div class="report-card border border-outline-variant/30 py-5 px-6 md:py-6 md:px-8 rounded-xl bg-white relative z-10">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white font-bold text-[12px] shrink-0">4</div>
+                        <h3 class="font-bold text-[16px] text-primary">우선순위 3가지</h3>
+                    </div>
+                    <p class="text-on-surface-variant text-[14px] mt-2">즉시 수정, 단기 정리, 구조 개선으로 나눠 정리합니다.</p>
+                </div>
+                <div class="report-card border border-outline-variant/30 py-5 px-6 md:py-6 md:px-8 rounded-xl bg-white relative z-10">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white font-bold text-[12px] shrink-0">5</div>
+                        <h3 class="font-bold text-[16px] text-primary">필요한 정리 범위 안내</h3>
+                    </div>
+                    <p class="text-on-surface-variant text-[14px] mt-2">1회 리포트로 직접 개선이 가능한지, 추가 정리나 파트너십이 필요한지 구분합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 신청 전 FAQ -->
+    <section class="px-5 mb-16">
+        <div class="narrow-container">
+            <h2 class="font-display-lg text-[24px] md:text-[28px] mb-8 text-on-surface text-center">신청 전 FAQ</h2>
+            <div class="space-y-3">
+                <!-- FAQ Item -->
+                <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left px-5 py-4 font-bold text-primary flex justify-between items-center hover:bg-surface-container-low transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+                        Q. 처음에는 무엇부터 시작하나요?
+                        <span class="material-symbols-outlined transform transition-transform text-secondary">expand_more</span>
+                    </button>
+                    <div class="px-5 py-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0 bg-surface">
+                        <div class="py-4 text-on-surface-variant text-[14px] leading-relaxed">
+                            처음에는 운영 구조 확인부터 시작합니다.<br/><br/>온라인 자료와 현재 운영 상태를 함께 보고,<br/>예약 흐름이 어디서 끊기는지 먼저 확인합니다.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left px-5 py-4 font-bold text-primary flex justify-between items-center hover:bg-surface-container-low transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+                        Q. Now Report만 받을 수 있나요?
+                        <span class="material-symbols-outlined transform transition-transform text-secondary">expand_more</span>
+                    </button>
+                    <div class="px-5 py-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0 bg-surface">
+                        <div class="py-4 text-on-surface-variant text-[14px] leading-relaxed">
+                            가능합니다.<br/><br/>Now Report만으로 충분한 경우에는<br/>추가 실행을 권하지 않습니다.<br/><br/>큐플은 처음부터 장기 계약을 전제로 진행하지 않습니다.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left px-5 py-4 font-bold text-primary flex justify-between items-center hover:bg-surface-container-low transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+                        Q. Now Report 이후 무엇을 받나요?
+                        <span class="material-symbols-outlined transform transition-transform text-secondary">expand_more</span>
+                    </button>
+                    <div class="px-5 py-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0 bg-surface">
+                        <div class="py-4 text-on-surface-variant text-[14px] leading-relaxed">
+                            현재 숙소의 상태와 개선 우선순위를 정리합니다.<br/><br/>한 줄 진단, 가장 큰 문제, 가장 큰 강점,<br/>우선순위 3가지, 권장 다음 단계를 안내드립니다.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left px-5 py-4 font-bold text-primary flex justify-between items-center hover:bg-surface-container-low transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+                        Q. 비용은 어떻게 정해지나요?
+                        <span class="material-symbols-outlined transform transition-transform text-secondary">expand_more</span>
+                    </button>
+                    <div class="px-5 py-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0 bg-surface">
+                        <div class="py-4 text-on-surface-variant text-[14px] leading-relaxed">
+                            숙소마다 객실 수, 채널 상태, 운영 문제, 현장 확인 범위가 다르기 때문에<br/>먼저 상태를 확인한 뒤 필요한 범위에 따라 안내드립니다.<br/><br/>모든 숙소에 동일한 금액을 제시하지 않습니다.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left px-5 py-4 font-bold text-primary flex justify-between items-center hover:bg-surface-container-low transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+                        Q. 장기 계약을 해야 하나요?
+                        <span class="material-symbols-outlined transform transition-transform text-secondary">expand_more</span>
+                    </button>
+                    <div class="px-5 py-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0 bg-surface">
+                        <div class="py-4 text-on-surface-variant text-[14px] leading-relaxed">
+                            아닙니다.<br/><br/>큐플은 처음부터 장기 계약을 전제로 진행하지 않습니다.<br/><br/>1회 점검으로 충분한 경우에는<br/>무리한 추가 계약을 권하지 않습니다.<br/><br/>필요한 경우에만 다음 단계를 제안드립니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 최종 CTA -->
+    <section class="bg-primary px-5 py-[100px] mt-16">
+        <div class="narrow-container text-center">
+            <h2 class="font-display-lg text-[28px] md:text-[36px] mb-6 text-white leading-tight">내 숙소, 지금 어디서<br/>흐름이 끊기는지 먼저 확인하세요.</h2>
+            <p class="text-white/80 text-[15px] md:text-[16px] mb-10 leading-relaxed">
+                예약이 줄었다고 바로 광고를 늘릴 필요는 없습니다.<br/><br/>먼저 상품, 가격, 채널, 상세페이지, 상담, 현장 운영 기준이<br/>서로 맞물려 있는지 확인해야 합니다.<br/><br/>Now Report는 현재 숙소의 문제 구조와 우선순위를 정리하는<br/>1차 구조 진단 리포트입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 max-w-[500px] mx-auto">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScLeDhZFVFTsQiltYSRuy1udaewyDBrjF_jdMJqur3E4PBIkA/viewform" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white py-4 rounded-full hover:bg-secondary/90 transition-all font-bold shadow-xl shadow-secondary/40 flex-1 flex justify-center">
+                    <div class="flex items-center gap-2.5">
+                        <span class="material-symbols-outlined text-[20px] md:text-[22px]">mail</span>
+                        <span class="font-title-lg text-[16px] md:text-[18px] text-left w-[155px] md:w-[170px] tracking-tight">Now Report 신청하기</span>
+                    </div>
+                </a>
+                <a href="https://open.kakao.com/o/sC7OW8ii" target="_blank" rel="noopener noreferrer" class="bg-[#FEE500] text-[#191600] py-4 rounded-full hover:bg-[#FEE500]/90 transition-all font-bold shadow-xl shadow-yellow-400/30 flex-1 flex justify-center">
+                    <div class="flex items-center gap-2.5">
+                        <span class="material-symbols-outlined text-[20px] md:text-[22px]">chat</span>
+                        <span class="font-title-lg text-[16px] md:text-[18px] text-left w-[155px] md:w-[170px] tracking-tight">실시간 상담하기</span>
+                    </div>
+                </a>
+            </div>
+            <p class="font-label-sm text-[13px] text-white/50 text-center mt-6">
+                Now Report는 장기 계약을 전제로 하지 않습니다.<br/>Now Report 진단 결과에 따라 필요한 범위만 제안드립니다.
+            </p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-12 border-t border-outline-variant/30">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-8">
+        
+        <!-- 하단 메인 로고 및 카피라이트 -->
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-10 text-center md:text-left">
+            <div>
+                <a href="#hero" class="flex items-center justify-center md:justify-start gap-[clamp(4px,1.5vw,12px)] shrink-0 min-w-0 mb-4">
+                    <img src="logo.png" alt="큐플컴퍼니 로고" class="h-[clamp(36px,8vw,56px)] w-auto object-contain opacity-80 mix-blend-multiply shrink-0">
+                    <span class="font-display-lg text-[clamp(20px,4.5vw,26px)] font-extrabold text-primary opacity-80 whitespace-nowrap">큐플컴퍼니</span>
+                </a>
+                <p class="text-[14px] text-slate-600 leading-relaxed mb-6">큐플컴퍼니는 숙박 운영 구조를 진단하고,<br/>설계, 실행하는 운영 파트너 입니다.</p>
+                <div class="text-[13px] text-slate-500 space-y-1.5 flex flex-col items-center md:items-start w-full">
+                    <p><span class="font-bold text-slate-700 mr-1.5">고객센터</span> 0507-1358-3642</p>
+                    <p><span class="font-bold text-slate-700 mr-1.5">이메일</span> <a href="mailto:contact@curatep.com" class="hover:text-primary transition-colors hover:underline">contact@curatep.com</a></p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end gap-5 mt-4 md:mt-0">
+                <!-- 채널 아이콘 영역 (상단에서 이동됨) -->
+                <div class="flex items-center justify-center md:justify-end gap-8 md:gap-10 pb-2 md:pb-0">
+                    <!-- 블로그 -->
+                    <a href="#" class="group relative flex flex-col items-center gap-1.5 shrink-0" aria-label="큐플 블로그 보기">
+                        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-white border border-slate-200 shadow-sm group-hover:border-[#03C75A] transition-colors">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                               <text x="8" y="17" font-family="'Arial', sans-serif" font-weight="900" font-size="16" fill="#03C75A">b</text>
+                               <rect x="18" y="5" width="2" height="14" fill="#03C75A" rx="1"/>
+                            </svg>
+                        </div>
+                        <span class="text-[12px] font-bold text-slate-700">블로그</span>
+                        <div class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-slate-800 text-white text-[11px] font-bold rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md z-10">운영 구조 칼럼</div>
+                    </a>
+
+                    <!-- 인스타그램 -->
+                    <div class="group relative flex flex-col items-center gap-1.5 shrink-0 opacity-50 cursor-not-allowed" aria-label="큐플 인스타그램 준비 중">
+                        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-white border border-slate-200 shadow-sm">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="url(#insta-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <defs>
+                                    <linearGradient id="insta-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f09433"/>
+                                        <stop offset="25%" stop-color="#e6683c"/>
+                                        <stop offset="50%" stop-color="#dc2743"/>
+                                        <stop offset="75%" stop-color="#cc2366"/>
+                                        <stop offset="100%" stop-color="#bc1888"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <span class="text-[12px] font-bold text-slate-400">준비 중</span>
+                        <div class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-slate-800 text-white text-[11px] font-bold rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md z-10">짧은 진단 콘텐츠</div>
+                    </div>
+
+                    <!-- 유튜브 -->
+                    <div class="group relative flex flex-col items-center gap-1.5 shrink-0 opacity-50 cursor-not-allowed" aria-label="큐플 유튜브 준비 중">
+                        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-white border border-slate-200 shadow-sm">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#FF0000">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </div>
+                        <span class="text-[12px] font-bold text-slate-400">준비 중</span>
+                        <div class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-slate-800 text-white text-[11px] font-bold rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md z-10">사례와 설명 영상</div>
+                    </div>
+                </div>
+
+                <a href="now-report.html" class="text-secondary font-bold hover:underline md:mt-2">Now Report 신청하기</a>
+                <div class="font-label-sm text-[12px] text-on-surface-variant/60 tracking-wider">
+                    © 2025 큐플컴퍼니 All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="sm:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-outline-variant/30 p-3 z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScLeDhZFVFTsQiltYSRuy1udaewyDBrjF_jdMJqur3E4PBIkA/viewform" target="_blank" rel="noopener noreferrer" class="block text-center w-full bg-secondary text-white py-3.5 rounded-full font-title-lg text-[16px] font-bold hover:bg-secondary/90 transition-all shadow-md shadow-secondary/20">Now Report 신청하기</a>
+</div>
+
+<script>
+    // Checklist Logic
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    const countText = document.getElementById('hook-count-text');
+    const warningText = document.getElementById('hook-warning-text');
+    const resultBox = document.getElementById('hook-result-box');
+
+    checkboxes.forEach(box => {
+        box.addEventListener('change', () => {
+            const checkedCount = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
+            if (checkedCount >= 3) {
+                countText.innerHTML = `선택한 항목: <span class="text-secondary font-bold">${checkedCount}개 이상</span>`;
+                warningText.classList.remove('hidden');
+                resultBox.classList.add('border-secondary', 'bg-secondary/5');
+            } else {
+                countText.textContent = `선택한 항목: ${checkedCount}개`;
+                warningText.classList.add('hidden');
+                resultBox.classList.remove('border-secondary', 'bg-secondary/5');
+            }
+        });
+    });
+
+    // FAQ Accordion Logic with a11y
+    function toggleFaq(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.material-symbols-outlined');
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all other FAQs
+        document.querySelectorAll('.max-h-0').forEach(div => {
+            if (div !== content) {
+                div.style.maxHeight = null;
+                div.classList.remove('opacity-100');
+                div.classList.add('opacity-0');
+                div.previousElementSibling.setAttribute('aria-expanded', 'false');
+                div.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        if (!isExpanded) {
+            btn.setAttribute('aria-expanded', 'true');
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            btn.setAttribute('aria-expanded', 'false');
+            content.style.maxHeight = null;
+            content.classList.remove('opacity-100');
+            content.classList.add('opacity-0');
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    // Enter/Space accessibility for FAQ buttons
+    document.querySelectorAll('button[aria-expanded]').forEach(btn => {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFaq(this);
+            }
+        });
+    });
+
+    // Report Cards Animation Observer
+    const reportCards = document.querySelectorAll('.report-card');
+    const reportObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                reportCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('is-visible');
+                    }, index * 100);
+                });
+                reportObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const reportSection = document.querySelector('#report-deliverables');
+    if (reportSection) {
+        reportObserver.observe(reportSection);
+    }
+</script>
+</body>
+</html>
